@@ -1,0 +1,418 @@
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#app {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+#background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url('./Image_Characters/background.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transform: scale(1.025);
+}
+#myBtn {
+  display: block;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+#section_1,
+#section_2,
+#section_3,
+#registration_section,
+#section_5 {
+    width: min(800px, 100vw);
+    height: 600px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+#main{
+    width: 60%;
+    height: 80%;
+    vertical-align: middle;
+}
+
+#registration_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+#class3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#image_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+#side {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+}
+
+#section_breaker {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0px;
+    width: 65%;
+    height: 65%;
+}
+
+#paragraph {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: left;
+    margin: 0;
+}
+
+.section_buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.section_buttons button {
+    margin: 0;
+}
+
+#section_1 {
+    color: #211F39;
+    background-image: url('Image_Characters/art 1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.social_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#section_2 {
+    color: #211F39;
+    background-color: #5C4582;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#section_3 {
+    color: #211F39;
+    background-color: #BD81BA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    background-color: #F7B4CF;
+    color: white;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+#registration_section {
+    background-image: url('Image_Characters/preregister.png');
+    background-size: cover;
+    background-position: center;
+    vertical-align: middle;
+}
+l{
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#section_5 {
+    color: white;
+    background-color: #211F39;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.top-actions {
+    align-self: flex-end;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(15, 11, 32, 0.78);
+    backdrop-filter: blur(7px);
+}
+.form-panel {
+    width: min(440px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    margin: 0;
+    padding: 32px;
+    box-sizing: border-box;
+    border: 1px solid rgba(247, 180, 207, 0.7);
+    border-top: 5px solid #F7B4CF;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #34264f, #211F39 75%);
+    color: white;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55), 0 0 35px rgba(247, 180, 207, 0.18);
+    animation: modal-enter 180ms ease-out;
+}
+.form-panel h1 {
+    margin: 0;
+    color: #F7B4CF;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+}
+.form-intro {
+    margin: 8px 0 22px;
+    color: #e4d9f1;
+}
+.form-panel form label {
+    margin-top: 4px;
+    color: #f7eafa;
+    font-weight: 600;
+}
+.form-panel form {
+    display: grid;
+    gap: 10px;
+}
+.form-panel input {
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #a798bb;
+    border-radius: 8px;
+    background: #fff;
+    color: #211F39;
+    font: inherit;
+}
+.form-panel input:focus {
+    outline: 3px solid rgba(247, 180, 207, 0.65);
+    border-color: #F7B4CF;
+}
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+.form-panel button {
+    min-height: 46px;
+    padding: 8px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, filter 150ms ease;
+}
+.form-panel button:hover:not(:disabled) {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+.form-panel button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+.button-secondary {
+    border: 1px solid #c5b7d9;
+    background: transparent;
+    color: white;
+}
+.button-danger {
+    border: 1px solid #e38a9b;
+    background: #a63d5a;
+    color: white;
+}
+.button-primary {
+    min-width: 190px;
+    border: 2px solid #fff;
+    background: #5C4582;
+    box-shadow: 0 8px 25px rgba(33, 31, 57, 0.4);
+    font-size: 1.15rem;
+}
+@keyframes modal-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.admin-panel {
+    width: min(760px, 100%);
+}
+.admin-heading,
+.admin-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.admin-heading h1,
+.admin-actions h2 {
+    margin: 0 0 8px;
+}
+.admin-heading p {
+    overflow-wrap: anywhere;
+}
+.user-list {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+}
+.user-card {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid #bd81ba;
+    border-radius: 8px;
+}
+.user-card p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.user-card input {
+    width: 100%;
+    box-sizing: border-box;
+}
+.preview-indicators {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 8px;
+}
+.preview-indicators button {
+    width: 38px;
+    height: 38px;
+}
+.preview-indicators .active {
+    background-color: #5C4582;
+}
+#class3 img {
+    max-width: 100%;
+    height: auto;
+}
+.social_button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+a {
+    color: #F7B4CF;
+}
+@media (max-width: 600px) {
+    #section_1,
+    #section_2,
+    #section_3,
+    #registration_section,
+    #section_5 {
+        height: auto;
+        min-height: 300px;
+    }
+    #section_2 {
+        flex-direction: column;
+        padding: 24px;
+    }
+    .modal-backdrop {
+        padding: 12px;
+    }
+    .form-panel {
+        max-height: calc(100vh - 24px);
+        padding: 22px;
+    }
+    .form-actions {
+        flex-wrap: wrap;
+    }
+    #image_section,
+    #section_breaker {
+        width: 100%;
+    }
+}
+
+#section_for_links,
+#last_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.social_button {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_image {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+}
